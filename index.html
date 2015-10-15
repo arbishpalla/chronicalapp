@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./bootstrap-3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body >
+<script src="./bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    var currentid="div2";
+function makeMain(id){
+    currentid=id;
+//alert(id+document.getElementById(id).getAttribute("data-content2")+document.getElementById(id).getAttribute("data-image"));
+    document.getElementById("div3").setAttribute("data-content2",document.getElementById(id).getAttribute("data-content2"));
+    //alert(document.getElementById("div3").getAttribute("data-image"));
+   // document.getElementById("div3").currentStyle("data-image",document.getElementById(id).getAttribute("data-image"));
+       // var y=document.getElementById("id").getAttribute("data-image");
+  //  var test = document.getElementsByClassName(content3).
+   //         backgroundImage="url("+document.getElementById(id).getAttribute("data-image")+")";
+    //console.log(document.styleSheets[0].addRule('.content3::after','background-image: url("img/Joints.png")'));
+    //console.log(test);
+   // preview = document.getElementsByClassName("content3")[0];
+    var img=document.getElementById(id).getAttribute("data-image");
+//alert(img);
+ var example = $('<style>.content3::after{background-image:url('+img+')}</style>').appendTo('head');
+ console.log(example);
+   // preview.style.backgroundImage = "url("+document.getElementById(id).getAttribute("data-image")+")";
+}
+
+    function plusFunc(){
+        var x=document.getElementById("div3").getAttribute("data-content2");
+        document.getElementById("div3").setAttribute("data-content2", parseInt(x)+1);
+        document.getElementById(currentid).setAttribute("data-content2", parseInt(x)+1);
+    }
+
+    function minusFunc(){
+        var x=document.getElementById("div3").getAttribute("data-content2");
+      if(parseInt(x)-1>-1)
+      {
+          document.getElementById("div3").setAttribute("data-content2", parseInt(x) - 1);
+          document.getElementById(currentid).setAttribute("data-content2", parseInt(x) - 1);
+      }
+    }
+
+
+
+</script>
+
+    <header>
+    <div class="col-xs-12"><img class="logo" src="img/Logo.png" /></div>
+        <div class="col-xs-12" style="background-color: #080808; opacity: 0.70; text-align: center; font-size: 115%;" >
+            <b> HOW MUCH DO YOU REALLY SMOKE <br> CLICK TO COUNT AND KEEP TRACK </b></div>
+
+    </header>
+
+<div style="padding-top: 25%">
+<div class="rw">
+    <div  onclick="makeMain(id)" id="div1" class="hexagon content ribbon content1"  data-image="img/Blunts.png" data-content="BLUNTS"  data-content2="6"></div>
+    <div  onclick="makeMain(id)" id="div2" class="hexagon content ribbon content2 var2" data-image="img/Joints.png" data-content="JOINTS" data-content2="7"></div>
+</div>
+<div class="rw">
+
+    <a class="btns callus" id="minus" href="#"  onclick="minusFunc()"><img src="img/minus.png" alt="MINUS" width="13%" style="margin-top: -30%;"></a>
+    <div id="div3" class="hexagon content ribbonMain var3 content3" data-content=" " data-content2="7"></div>
+    <a class="btns callus" id="plus" href="#"  onclick="plusFunc()"><img src="img/plus.png" alt="PLUS" width="13%" style="margin-top: -30%;"></a>
+</div>
+<div class="rw">
+    <div id="div4" onclick="makeMain(id)" class="hexagon content ribbon content4 var4" data-content="BOWLS" data-image="img/Bowl.png" data-content2="8"></div>
+    <div id="div5" onclick="makeMain(id)" class="hexagon content ribbon content5 var5" data-image="img/Bongs.png" data-content="BONGS" data-content2="9"></div>
+</div>
+</div>
+
+</body>
+</html>
