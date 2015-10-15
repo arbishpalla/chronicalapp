@@ -26,12 +26,12 @@ function makeMain(id){
     //console.log(test);
    // preview = document.getElementsByClassName("content3")[0];
     var img=document.getElementById(id).getAttribute("data-image");
-    update();z
+    update();
 //alert(img);
  var example = $('<style>.content3::after{background-image:url('+img+')}</style>').appendTo('head');
  console.log(example);
    // preview.style.backgroundImage = "url("+document.getElementById(id).getAttribute("data-image")+")";
-    update();z
+    update();
 }
     function update(){
         document.getElementById("value1").innerHTML= document.getElementById("div1").getAttribute("data-content2");
