@@ -45,16 +45,24 @@ header img.logo{
 
     /*@url: attr(data-image);*/
 
-    content:attr(data-content) attr(data-content2);
+    /*content:attr(data-content) attr(data-content2);*/
     background-size: 75% 40%;
     background-repeat: no-repeat;
+    display: block;
+    width: 200%;
+    height: 200%;
+    color: red;
 }
 
 .content2:after {
     background-image:url(../img/Joints.png);
-    content:attr(data-content ) attr(data-content2);
+    /*content:attr(data-content ) attr(data-content2);*/
     background-size: 75% 40%;
     background-repeat: no-repeat;
+    display: block;
+    width: 200%;
+    height: 200%;
+    color: red;
 
 }
 
@@ -62,22 +70,34 @@ header img.logo{
     background-image:url(../img/Joints.png);
     background-size: 75% 70%;
     background-repeat: no-repeat;
-    content:attr(data-content) attr(data-content2);
+    /*content:attr(data-content) attr(data-content2);*/
+    display: block;
+    width: 200%;
+    height: 200%;
+    color: red;
 }
 
 .content4:after {
     background-image:url(../img/Bowl.png);
-    content:attr(data-content) attr(data-content2);
+    /*content:attr(data-content) attr(data-content2);*/
     background-size: 75% 70%;
     background-repeat: no-repeat;
     width: 200px;.
+    display: block;
+    width: 200%;
+    height: 200%;
+    color: red;
 }
 .content5:after {
     background-image:url(../img/Bongs.png);
-    content:attr(data-content) attr(data-content2);
+    /*content:attr(data-content) attr(data-content2);*/
     background-size: 78% 50%;
     background-repeat: no-repeat;
     width: 200px;
+    display: block;
+    width: 200%;
+    height: 200%;
+    color: red;
 }
 
 .rw:first-child .hexagon:first-child:before {
@@ -118,12 +138,13 @@ header img.logo{
     height: 4.4em;
     color: black;
     font: 1em/2.4 Century Gothic;
+
     transform: rotate(266deg) skewY(30deg) scaleX(0.866);
 }
 .ribbonMain:after {
     overflow: hidden;
     top: 50%;
-    margin: -3.2em 0%;
+    margin: -2.2em 0%;
     width: 100%;
     height: 4.4em;
     color: black;
