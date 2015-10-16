@@ -7,10 +7,7 @@ html {
     background-size: cover;
 
 }
-@font-face {
-   font-family: bebaneus;
-   src: url(../font/BebasNeue.otf);
-}
+
 body{
     background-color: rgba(255, 255, 255, 0);}
 
@@ -27,95 +24,29 @@ width: 100%;
 
 }
 .rw { margin: -5% -16%; text-align: center; }
-.rw:first-child { margin-top: -3.75%; }
+.rw:first-child { margin-top: 2.25%; }
 .hexagon {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    margin: 0 -0.5%;
+    margin: 0 0.5%;
     padding: 16%;
-    background-image: url(../img/box.png);
-    background-repeat: no-repeat;
-    background-size: 90% 97%;
-}
-div#div1 {
-    margin-left: 15px;
-    width: 16px;
-}
-/*div#div2 {
-margin-left: 22px;
-padding-right: 99px;
-}
-*/
-.minus{
-    margin-top: -30%;
-    margin-bottom: 5px;
-    width: 10%;
-    height: 120px;
-    margin-left: -21px;
-    margin-right: 17px;
-}
-.img {
-/*    background-image: url(../img/Blunts.png);*/
-    position: absolute;
-
-}
-#img1 img{
-    width: 100%;
-    height: auto; 
-    margin-left: 15%;   
-}
-#img4 img{
-    width: 100%;
-    height: auto; 
-    margin-left: 15%;   
-}
-#img2 img{
-    height: 15px;
-    width: 100%;
-    display:block;
-    right: 15%;
-}
-#img5 img{
-    height: 15px;
-    width: 100%;
-    display:block;
-    right: 15%;
-}
-span.underline {
-border-bottom: 2px solid;
-    width: 37%;
-    position: absolute;
-margin-left: -18.4%;
-    margin-top: -3%;}
-span.underline2 {
-border-bottom: 2px solid;
-    width: 37%;
-    width: 18%;
-    position: absolute;
-    margin-left: -9.4%;
-    margin-top: -2%;
-    }
-.plus{
-margin-top: -30%;
-    width: 10%;
-    height: 121px;
-    margin-right: -8px;
-    margin-left: 4px;
-
+    -webkit-transform: rotate(30deg) skewY(30deg) scaleX(.866);
+    transform: rotate(60deg) skewY(30deg) scaleX(.866);
 }
 .hexagon:before, .content:after {
     display: block;
     position: absolute;
-    top: 6.7%;
-    right: 0;
-    bottom: 6.7%;
-    left: 0;
+    top: 6.7%; right: 0; bottom: 6.7%; left: 0;
+    -webkit-transform: scaleX(1.155) skewY(-30deg) rotate(-30deg);
+    transform: scaleX(1.155) skewY(-30deg) rotate(-30deg);
+    background-color: rgba(245,245,245,245););
+
     background-size: cover;
     content: '';
 }
 .content1:after {
-/*    background-image:url(../img/Blunts.png);*/
+    background-image:url(../img/Blunts.png);
     /*background-image : attr(data-image url);
     background-size: 70% 60%;
 */
@@ -132,7 +63,7 @@ margin-top: -30%;
 }
 
 .content2:after {
-
+    background-image:url(../img/Joints.png);
     /*content:attr(data-content ) attr(data-content2);*/
     background-size: 75% 40%;
     background-repeat: no-repeat;
@@ -145,7 +76,7 @@ margin-top: -30%;
 
 .content3:after {
     background-image:url(../img/Joints.png);
-    background-size: 67% 56% ;
+    background-size: 75% 70%;
     background-repeat: no-repeat;
     /*content:attr(data-content) attr(data-content2);*/
     display: block;
@@ -155,7 +86,7 @@ margin-top: -30%;
 }
 
 .content4:after {
-
+    background-image:url(../img/Bowl.png);
     /*content:attr(data-content) attr(data-content2);*/
     background-size: 75% 70%;
     background-repeat: no-repeat;
@@ -166,18 +97,21 @@ margin-top: -30%;
     color: red;
 }
 .content5:after {
-
+    background-image:url(../img/Bongs.png);
     /*content:attr(data-content) attr(data-content2);*/
     background-size: 78% 50%;
     background-repeat: no-repeat;
     width: 200px;
     display: block;
+    width: 200%;
     height: 200%;
     color: red;
 }
 
 .rw:first-child .hexagon:first-child:before {
- 
+    background-color:
+    rgba(245,245,245,245);
+
 }
 .rw:nth-child(2) .hexagon:first-child:before {
     background-color:
@@ -185,10 +119,13 @@ margin-top: -30%;
 
 }
 .rw:nth-child(2) .hexagon:nth-child(2):before {
- 
+    background-color:
+    rgba(245,245,245,245);
+
 }
 .rw:nth-child(3) .hexagon:first-child:before {
-  
+    background-color:
+    rgba(245,245,245,245);
 
 }
 .rw:nth-child(4) .hexagon:first-child:before {
@@ -206,7 +143,7 @@ margin-top: -30%;
     top: 50%;
     margin: -3.2em 15%;
     width: 100%;
-    height: 14.4em;
+    height: 4.4em;
     color: black;
     font: 1em/2.4 Century Gothic;
 
@@ -215,12 +152,12 @@ margin-top: -30%;
 .ribbonMain:after {
     overflow: hidden;
     top: 50%;
-    margin: -2.6em 8%;;
+    margin: -3.2em 0%;
     width: 104%;
     height: 4.4em;
     color: black;
     font: 1em/2.4 Century Gothic;
-
+    transform: rotate(266deg) skewY(30deg) scaleX(0.866);
 }
 
 .game:after {
