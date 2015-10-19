@@ -16,6 +16,29 @@
 <script>
     var currentid="div2";
 
+$( document ).ready(function(){
+        $('.plus').click(function(){
+               var y = document.getElementById("value3").innerHTML;
+         if(y.length == '2'){
+            document.getElementById('value3').style.marginLeft  = "43%"; 
+        }
+        else {
+            document.getElementById('value3').style.marginLeft  = "47%";            
+        }
+
+    });
+        $('.minus').click(function(){
+                   var y = document.getElementById("value3").innerHTML;
+
+            if(y.length == '1'){
+            document.getElementById('value3').style.marginLeft  = "47%";
+        }     
+        else{
+            document.getElementById('value3').style.marginLeft  = "43%"; 
+        }
+
+        });
+});
 function makeMain(id){
     currentid=id;
 //alert(id+document.getElementById(id).getAttribute("data-content2")+document.getElementById(id).getAttribute("data-image"));
@@ -28,6 +51,7 @@ function makeMain(id){
     //console.log(document.styleSheets[0].addRule('.content3::after','background-image: url("img/Joints.png")'));
     //console.log(test);
    // preview = document.getElementsByClassName("content3")[0];
+
     var img=document.getElementById(id).getAttribute("data-image");
     update();
 //alert(img);
@@ -53,6 +77,7 @@ function makeMain(id){
 
     function minusFunc(){
         var x=document.getElementById("div3").getAttribute("data-content2");
+
       if(parseInt(x)-1>-1)
       {
           document.getElementById("div3").setAttribute("data-content2", parseInt(x) - 1);
@@ -76,37 +101,38 @@ function makeMain(id){
 <div style="padding-top: 50%">
 <div class="rw">
 
-    <div  class="hexagon content ribbon content1" ></div>
-    <div style="position: absolute;padding-left:34%;font-family: bebaneus;z-index: 30;margin-top: -39%;font-size: 7.9vw;font-weight: 700;color: #000;">BLUNTS<br /><span class="underline"></span></div>
-    <div id="img1" onclick="makeMain(id)" data-content2="6" data-image="img/Blunts.png"  data-content="BLUNTS" style="position: absolute;padding-left: 26.5%;color: #000;z-index: 30;margin-top: -27%; text-decoration:"><img src="img/Blunts.png" class="img"></div>
-    <div id="value1" style="position: absolute;padding-left: 41%;font-family: bebaneus;z-index: 30;margin-top: -21%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+    <div  class="hexagon content ribbon content1"style="margin-left: -4.5%" >
+    </div>
+    <div style="position: absolute;padding-left:17%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BLUNTS<br /><span class="underline"></span></div>
+    <div id="img1" onclick="makeMain(id)" data-content2="6" data-image="img/Blunts.png"  data-content="BLUNTS" style="position: absolute;margin-left:-19%;padding-left: 26.5%;color: #000;z-index: 30;margin-top: -25%; text-decoration:"><img src="img/Blunts.png" class="img"></div>
+    <div id="value1" style="position: absolute;padding-left: 24%;font-family: bebaneus;z-index: 30;margin-top: -18%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
 
 
-    <div class="hexagon content ribbon content2"></div>
-    <div style="position: absolute;padding-left: 77%;font-family: bebaneus;z-index: 30;margin-top: -39.5%;font-size: 7.9vw;font-weight: 700;color: #000;">JOINTS
+    <div class="hexagon content ribbon content2" style="margin-right: -11px;"></div>
+    <div style="position: absolute;padding-left: 66%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">JOINTS
     <br /><span class="underline2"></span></div>
-    <div id="img2" class="col-xs-4" onclick="makeMain(id)" data-content2="7" data-image="img/Joints.png"  data-content="JOINTS" style="position: absolute;right: 10%;z-index: 30;margin-top: -27%;"><img style="position: relative;" src="img/Joints.png" class="img"></div>
-    <div id="value2"style="position: absolute;font-family: bebaneus;padding-left: 85%;z-index: 30;margin-top: -21%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+    <div id="img2" class="col-xs-4" onclick="makeMain(id)" data-content2="7" data-image="img/Joints.png"  data-content="JOINTS" style="position: absolute;    margin-right: -4%;right: 10%;z-index: 30;margin-top: -25.5%;"><img style="position: relative;" src="img/Joints.png" class="img"></div>
+    <div id="value2"style="position: absolute;font-family: bebaneus;padding-left: 73.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
 </div>
 <div class="rw">
 
-    <a class="btns callus" id="minus" href="#"  onclick="minusFunc()"><img class="minus" src="img/minus.png" alt="MINUS" width="13%" style="margin-top: -30%;"></a>
+    <a class="btns callus" id="minus" href="#"  onclick="minusFunc()"><img class="minus" src="img/minus.png" alt="MINUS" width="13%" style="margin-top: -39.5%;"></a>
     <div id="div3" class="hexagon content ribbonMain var3 content3" data-content=" " data-content2="0"></div>
-    <div id="value3" style="position: absolute;font-family: bebaneus;margin-left: 61%;z-index: 30;margin-top: -28%;font-size: 17.9vw;font-weight: 600;color: #000;"></div>
-    <a class="btns callus" id="plus" href="#"  onclick="plusFunc()"><img class="plus" src="img/plus.png" alt="PLUS" width="13%" style="margin-top: -30%;"></a>
+    <div id="value3" style="position: absolute;font-family: bebaneus;margin-left: 47%;z-index: 30;margin-top: -28%;font-size: 17.9vw;font-weight: 600;color: #000;"></div>
+    <a class="btns callus" id="plus" href="#"  onclick="plusFunc()"><img class="plus" src="img/plus.png" alt="PLUS" width="13%" style="margin-top: -42%;"></a>
 </div>
 <div class="rw" style="margin-top: 6px;">
     <div class="hexagon content ribbon content4 "></div>
-    <div style="position: absolute;padding-left:34%;font-family: bebaneus;z-index: 30;margin-top: -39%;font-size: 7.9vw;font-weight: 700;color: #000;">BOWL
-    <br /><span class="underline" style="width: 31%;margin-left: -24px;margin-top: -6px;"></span></div>
-     <div id="img4" onclick="makeMain(id)" data-content2="8" data-image="img/Bowl.png" data-content="BOWLS" style="position: absolute;padding-left: 26.5%;color: #000;z-index: 30;margin-top: -30%; text-decoration:"><img src="img/Bowl.png" class="img"></div>
-    <div id="value4" style="position: absolute;padding-left: 41%;font-family: bebaneus;z-index: 30;margin-top: -21%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+    <div style="position: absolute;padding-left:19%;font-family: bebaneus;z-index: 30;margin-top: -38%;font-size: 7vw;font-weight: 700;color: #000;">BOWLS
+    <br /><span class="underline" style="width: 42%;margin-left: -24px;margin-top: -6px;"></span></div>
+     <div id="img4" onclick="makeMain(id)" data-content2="8" data-image="img/Bowl.png" data-content="BOWLS" style="position: absolute;padding-left: 23.5%;color: #000;z-index: 30;margin-top: -28%; text-decoration:"><img src="img/Bowl.png" class="img"></div>
+    <div id="value4" style="position: absolute;padding-left: 25%;font-family: bebaneus;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
     
     <div onclick="makeMain(id)" class="hexagon content ribbon content5 var5"></div>
-    <div style="position: absolute;padding-left: 77%;z-index: 30;font-family: bebaneus;margin-top: -39.5%;font-size: 7.9vw;font-weight: 700;color: #000;">BONGS
+    <div style="position: absolute;padding-left: 67%;z-index: 30;font-family: bebaneus;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BONGS
     <br /><span class="underline2"></span></div>
-   <div id="img5" class="col-xs-4" onclick="makeMain(id)" data-content2="6" data-image="img/Bongs.png"  data-content="BONGS" style="position: absolute;right: 10%;z-index: 30;margin-top: -27%;"><img  style="position: relative;"src="img/Bongs.png" class="img"></div>
-    <div id="value5" style="position: absolute;padding-left: 85%;font-family: bebaneus;z-index: 30;margin-top: -21%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+   <div id="img5" class="col-xs-4" onclick="makeMain(id)" data-content2="6" data-image="img/Bongs.png"  data-content="BONGS" style="position: absolute;    margin-right: -6%;right: 10%;z-index: 30;margin-top: -25%;"><img  style="position: relative;"src="img/Bongs.png" class="img"></div>
+    <div id="value5" style="position: absolute;padding-left: 85%;font-family: bebaneus;padding-left: 73.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
 </div>
 </div>
 

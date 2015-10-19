@@ -26,17 +26,18 @@ header img.logo{
 width: 100%;
 
 }
-.rw { margin: -5% -16%; text-align: center; }
+.rw { margin: -5% -0%; text-align: center; }
 .rw:first-child { margin-top: -3.75%; }
 .hexagon {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    margin: 0 -0.5%;
-    padding: 16%;
+    margin: -3px 2%;
+    padding: 22%;
     background-image: url(../img/box.png);
     background-repeat: no-repeat;
-    background-size: 90% 97%;
+    background-size: 89% 97%;
+        background-position-x: 9px;
 }
 div#div1 {
     margin-left: 15px;
@@ -50,10 +51,10 @@ padding-right: 99px;
 .minus{
     margin-top: -30%;
     margin-bottom: 5px;
-    width: 10%;
+    width: 13%;
     height: 120px;
-    margin-left: -21px;
-    margin-right: 17px;
+    margin-left: -11px;
+    margin-right: 12px;
 }
 .img {
 /*    background-image: url(../img/Blunts.png);*/
@@ -63,12 +64,14 @@ padding-right: 99px;
 #img1 img{
     width: 100%;
     height: auto; 
-    margin-left: 15%;   
+    margin-left: 19%;   
+
 }
 #img4 img{
     width: 100%;
     height: auto; 
-    margin-left: 15%;   
+    margin-left: -35%;
+    height: 34px ;
 }
 #img2 img{
     height: 15px;
@@ -83,11 +86,12 @@ padding-right: 99px;
     right: 15%;
 }
 span.underline {
-border-bottom: 2px solid;
-    width: 37%;
+    border-bottom: 2px solid;
+    width: 49%;
     position: absolute;
-margin-left: -18.4%;
-    margin-top: -3%;}
+    margin-left: -24.4%;
+    margin-top: -5%;
+    }
 span.underline2 {
 border-bottom: 2px solid;
     width: 37%;
@@ -97,11 +101,11 @@ border-bottom: 2px solid;
     margin-top: -2%;
     }
 .plus{
-margin-top: -30%;
-    width: 10%;
+    margin-top: -30%;
+    width: 13%;
     height: 121px;
-    margin-right: -8px;
-    margin-left: 4px;
+margin-right: -10px;
+    margin-left: 14px;
 
 }
 .hexagon:before, .content:after {
@@ -215,7 +219,7 @@ margin-top: -30%;
 .ribbonMain:after {
     overflow: hidden;
     top: 50%;
-    margin: -2.6em 8%;;
+    margin: -2.6em 16%;
     width: 104%;
     height: 4.4em;
     color: black;
