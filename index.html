@@ -19,23 +19,31 @@
 <script src="./js/jquery1.9.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+
         console.log(localStorage.getItem("count1"));
+        if(localStorage.getItem("count1") != null ){
         if(!isNaN(localStorage.getItem("count1"))){
         document.getElementById("value1").innerHTML = localStorage.getItem("count1");
-        document.getElementById("img1").setAttribute("data-content2",localStorage.getItem("count1"));
+        document.getElementById("span1").setAttribute("data-content2",localStorage.getItem("count1"));
         }
+    }
+        if(localStorage.getItem("count2") != null ){    
          if(!isNaN(localStorage.getItem("count2"))){
         document.getElementById("value2").innerHTML = localStorage.getItem("count2");
-        document.getElementById("img2").setAttribute("data-content2",localStorage.getItem("count2"));
+        document.getElementById("span2").setAttribute("data-content2",localStorage.getItem("count2"));
         }
+    }
+         if(localStorage.getItem("count3") != null ){
         if(!isNaN(localStorage.getItem("count3"))){
          document.getElementById("value4").innerHTML = localStorage.getItem("count3");
-        document.getElementById("img4").setAttribute("data-content2",localStorage.getItem("count3"));
+        document.getElementById("span3").setAttribute("data-content2",localStorage.getItem("count3"));
         }
+    }
+        if(localStorage.getItem("count4") != null ){
         if(!isNaN(localStorage.getItem("count4"))){
         document.getElementById("value5").innerHTML = localStorage.getItem("count4");
-        document.getElementById("img5").setAttribute("data-content2",localStorage.getItem("count4"));
-
+        document.getElementById("span4").setAttribute("data-content2",localStorage.getItem("count4"));
+            }   
         }
 
 });
@@ -53,26 +61,26 @@ function makeMain(id){
     update();
 }
     function update(){
-        document.getElementById("value1").innerHTML= document.getElementById("img1").getAttribute("data-content2");
-        document.getElementById("value2").innerHTML=document.getElementById("img2").getAttribute("data-content2");
+        document.getElementById("value1").innerHTML= document.getElementById("span1").getAttribute("data-content2");
+        document.getElementById("value2").innerHTML=document.getElementById("span2").getAttribute("data-content2");
         document.getElementById("value3").innerHTML=document.getElementById("div3").getAttribute("data-content2");
-        document.getElementById("value4").innerHTML=document.getElementById("img4").getAttribute("data-content2");
-        document.getElementById("value5").innerHTML=document.getElementById("img5").getAttribute("data-content2");
+        document.getElementById("value4").innerHTML=document.getElementById("span3").getAttribute("data-content2");
+        document.getElementById("value5").innerHTML=document.getElementById("span4").getAttribute("data-content2");
 
         y = document.getElementById("value3").innerHTML=document.getElementById(currentid).getAttribute("data-content2");
          if(y.length == '2'){
             document.getElementById('value3').style.marginLeft  = "43%";
-            if(currentid == 'img1'){$('.data1').css("padding-left","21%");}
-            else if(currentid == 'img2'){$('.data2').css("padding-left","70.5%");}
-            else if(currentid == 'img4'){$('.data3').css("padding-left","22%");}
-            else if(currentid == 'img5'){$('.data4').css("padding-left","70.5%");}
+            if(currentid == 'span1'){$('.data1').css("padding-left","21%");}
+            else if(currentid == 'span2'){$('.data2').css("right","24%");}
+            else if(currentid == 'span3'){$('.data3').css("padding-left","22%");}
+            else if(currentid == 'span4'){$('.data4').css("right","24%");}
         }
         else if(y.length == '1'){
             document.getElementById('value3').style.marginLeft  = "46%"; 
-            if(currentid == 'img1'){$('.data1').css("padding-left","23%");}
-            else if (currentid == 'img2'){$('.data2').css("padding-left","72.5%");}
-            else if (currentid == 'img4'){$('.data3').css("padding-left","24%");}
-            else if (currentid == 'img5'){$('.data4').css("padding-left","72.5%");}
+            if(currentid == 'span1'){$('.data1').css("padding-left","23%");}
+            else if (currentid == 'span2'){$('.data2').css("right","23%");}
+            else if (currentid == 'span3'){$('.data3').css("padding-left","24%");}
+            else if (currentid == 'span4'){$('.data4').css("right","23%");}
         }
         else if(y.length == '3'){
             document.getElementById('value3').style.marginLeft  = "39%"; 
@@ -123,18 +131,20 @@ function makeMain(id){
 
 <div style="padding-top: 50%">
 <div class="rw">
-
-    <div data-content="BLUNTS" class="hexagon content ribbon content1"style="margin-left: -4.5%" >
+<span id="span1" onclick="makeMain(id)" data-content2="0" data-image="img/Blunts.png"  data-content="BLUNTS">
+    <div class="hexagon content ribbon content1"style="margin-left: -4.5%" >
     </div>
     <div onclick="makeMain(id)" data-content2="0" data-image="img/Blunts.png"  data-content="BLUNTS" style="position: absolute;padding-left:17%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BLUNTS<br /><span class="underline"></span></div>
-    <div id="img1" onclick="makeMain(id)" data-content2="0" data-image="img/Blunts.png"  data-content="BLUNTS"  id="img1" style="position: absolute;margin-left:-19%;padding-left: 26.5%;color: #000;z-index: 30;margin-top: -25%; text-decoration:"><img src="img/Blunts.png" class="img"></div>
+    <div id="img1" style="position: absolute;margin-left:-19%;padding-left: 26.5%;color: #000;z-index: 30;margin-top: -25%; text-decoration:"><img src="img/Blunts.png" class="img"></div>
     <div  id="value1" class="data1" style="position: absolute;padding-left: 23%;font-family: bebaneus;z-index: 30;margin-top: -18%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
- 
+ </span> 
+<span id="span2" onclick="makeMain(id)" data-content2="0" data-image="img/Joints.png"  data-content="JOINTS">
     <div class="hexagon content ribbon content2" style="margin-right: -11px;"></div>
-    <div style="position: absolute;padding-left: 66%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">JOINTS
+    <div style="position: absolute;right: 17%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">JOINTS
     <br /><span class="underline2"></span></div>
-    <div id="img2" onclick="makeMain(id)" data-content2="0" data-image="img/Joints.png"  data-content="JOINTS" class="col-xs-4" style="position: absolute; margin-right: -4%;right: 10%;z-index: 30;margin-top: -25.5%;"><img style="position: relative;" src="img/Joints.png" class="img"></div>
-    <div id="value2" class="data2" style="position: absolute;font-family: bebaneus;padding-left: 72.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+    <div id="img2" class="col-xs-4" style="position: absolute; margin-right: -4%;right: 10%;z-index: 30;margin-top: -25.5%;"><img style="position: relative;" src="img/Joints.png" class="img"></div>
+    <div id="value2" class="data2" style="position: absolute;font-family: bebaneus;right:24%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+</span>
 </div>
 <div class="rw">
 
@@ -143,19 +153,21 @@ function makeMain(id){
     <div id="value3" style="position: absolute;font-family: bebaneus;margin-left: 46%;z-index: 30;margin-top: -28%;font-size: 17.9vw;font-weight: 600;color: #000;"></div>
     <a class="btns callus" id="plus" href="#"  onclick="plusFunc()"><img class="plus" src="img/plus.png" alt="PLUS" width="13%" style="margin-top: -42%;"></a>
 </div>
-
 <div class="rw" style="margin-top: 6px;">
+   <span id="span3" onclick="makeMain(id)" data-content2="0" data-image="img/Bowl.png" data-content="BOWLS">
     <div class="hexagon content ribbon content4 "></div>
     <div style="position: absolute;padding-left:19%;font-family: bebaneus;z-index: 30;margin-top: -38%;font-size: 7vw;font-weight: 700;color: #000;">BOWLS
     <br /><span class="underline" style="width: 42%;margin-left: -24px;margin-top: -6px;"></span></div>
-     <div id="img4" onclick="makeMain(id)" data-content2="0" data-image="img/Bowl.png" data-content="BOWLS" style="position: absolute;padding-left: 23.5%;color: #000;z-index: 30;margin-top: -28%; text-decoration:"><img src="img/Bowl.png" class="img"></div>
+     <div id="img4" style="position: absolute;padding-left: 23.5%;color: #000;z-index: 30;margin-top: -28%; text-decoration:"><img src="img/Bowl.png" class="img"></div>
     <div id="value4" class="data3" style="position: absolute;padding-left: 24%;font-family: bebaneus;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
-    
+    </span>
+   <span id="span4" onclick="makeMain(id)" data-content2="0" data-image="img/Bongs.png"  data-content="BONGS" > 
     <div class="hexagon content ribbon content5 var5"></div>
-    <div style="position: absolute;padding-left: 67%;z-index: 30;font-family: bebaneus;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BONGS
+    <div style="position: absolute;right: 17%;z-index: 30;font-family: bebaneus;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BONGS
     <br /><span class="underline2"></span></div>
-   <div id="img5" class="col-xs-4" onclick="makeMain(id)" data-content2="0" data-image="img/Bongs.png"  data-content="BONGS" style="position: absolute;    margin-right: -6%;right: 10%;z-index: 30;margin-top: -25%;"><img  style="position: relative;"src="img/Bongs.png" class="img"></div>
-    <div id="value5" class="data4" style="position: absolute;padding-left: 85%;font-family: bebaneus;padding-left: 72.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+   <div id="img5" class="col-xs-4" style="position: absolute;margin-right: -6%;right: 10%;z-index: 30;margin-top: -25%;"><img  style="position: relative;"src="img/Bongs.png" class="img"></div>
+    <div id="value5" class="data4" style="position: absolute;right:24%;font-family: bebaneus;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+</span>
 </div>
 </div>
 

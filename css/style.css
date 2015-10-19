@@ -7,7 +7,10 @@ html {
     background-size: cover;
 
 }
-
+@font-face {
+   font-family: bebaneus;
+   src: url(../font/BebasNeue.otf);
+}
 body{
     background-color: rgba(255, 255, 255, 0);}
 
@@ -15,7 +18,6 @@ header img.logo{
     width:100%;
     margin: 10px 0px;
 }
-<<<<<<< HEAD
 #app-text{
     padding-right: 0px;
     padding-left: 0px;
@@ -26,15 +28,10 @@ width: 100%;
 }
 .rw { margin: -5% -0%; text-align: center; }
 .rw:first-child { margin-top: -3.75%; }
-=======
-.rw { margin: -5% -16%; text-align: center; }
-.rw:first-child { margin-top: 2.25%; }
->>>>>>> origin/master
 .hexagon {
     position: relative;
     display: inline-block;
     overflow: hidden;
-<<<<<<< HEAD
     margin: -3px 2%;
     padding: 22%;
     background-image: url(../img/box.png);
@@ -61,25 +58,9 @@ padding-right: 99px;
 }
 .img {
 /*    background-image: url(../img/Blunts.png);*/
-=======
-    margin: 0 0.5%;
-    padding: 16%;
-    -webkit-transform: rotate(30deg) skewY(30deg) scaleX(.866);
-    transform: rotate(60deg) skewY(30deg) scaleX(.866);
-}
-.hexagon:before, .content:after {
-    display: block;
->>>>>>> origin/master
     position: absolute;
-    top: 6.7%; right: 0; bottom: 6.7%; left: 0;
-    -webkit-transform: scaleX(1.155) skewY(-30deg) rotate(-30deg);
-    transform: scaleX(1.155) skewY(-30deg) rotate(-30deg);
-    background-color: rgba(245,245,245,245););
 
-    background-size: cover;
-    content: '';
 }
-<<<<<<< HEAD
 #img1 img{
     width: 100%;
     height: auto; 
@@ -113,11 +94,10 @@ span.underline {
     }
 span.underline2 {
 border-bottom: 2px solid;
-    width: 37%;
-    width: 18%;
+    width: 89%;
     position: absolute;
-    margin-left: -9.4%;
-    margin-top: -2%;
+    margin-left: -48.4%;
+    margin-top: -10%;
     }
 .plus{
     margin-top: -30%;
@@ -125,48 +105,20 @@ border-bottom: 2px solid;
     height: 121px;
 margin-right: -10px;
     margin-left: 14px;
-=======
-
-.hexagonb {
-    position: absolute;
-    display: inline-block;
-    overflow: hidden;
-    margin: 0 0.5%;
-    padding: 22.5%;
-    -webkit-transform: rotate(30deg) skewY(30deg) scaleX(.866);
-    transform: rotate(60deg) skewY(30deg) scaleX(.866);
-    z-index: -4;
->>>>>>> origin/master
 
 }
-.hexagonb:before,.contentb:after {
+.hexagon:before, .content:after {
     display: block;
     position: absolute;
-    top: 6.7%; right: 0; bottom: 6.7%; left: 0;
-    -webkit-transform: scaleX(1.155) skewY(-30deg) rotate(-30deg);
-    transform: scaleX(1.155) skewY(-30deg) rotate(-30deg);
-    background-color: grey;
-
+    top: 6.7%;
+    right: 0;
+    bottom: 6.7%;
+    left: 0;
     background-size: cover;
     content: '';
 }
-
-
-
-
-
-mark.green {
-    color: rgba(7, 174, 45, 0.87);
-    background: none;
-}
-
-
-
-
-
-
 .content1:after {
-    background-image:url(../img/Blunts.png);
+/*    background-image:url(../img/Blunts.png);*/
     /*background-image : attr(data-image url);
     background-size: 70% 60%;
 */
@@ -183,7 +135,7 @@ mark.green {
 }
 
 .content2:after {
-    background-image:url(../img/Joints.png);
+
     /*content:attr(data-content ) attr(data-content2);*/
     background-size: 75% 40%;
     background-repeat: no-repeat;
@@ -196,7 +148,7 @@ mark.green {
 
 .content3:after {
     background-image:url(../img/Joints.png);
-    background-size: 75% 70%;
+    background-size: 67% 56% ;
     background-repeat: no-repeat;
     /*content:attr(data-content) attr(data-content2);*/
     display: block;
@@ -206,7 +158,7 @@ mark.green {
 }
 
 .content4:after {
-    background-image:url(../img/Bowl.png);
+
     /*content:attr(data-content) attr(data-content2);*/
     background-size: 75% 70%;
     background-repeat: no-repeat;
@@ -217,21 +169,18 @@ mark.green {
     color: red;
 }
 .content5:after {
-    background-image:url(../img/Bongs.png);
+
     /*content:attr(data-content) attr(data-content2);*/
     background-size: 78% 50%;
     background-repeat: no-repeat;
     width: 200px;
     display: block;
-    width: 200%;
     height: 200%;
     color: red;
 }
 
 .rw:first-child .hexagon:first-child:before {
-    background-color:
-    rgba(245,245,245,245);
-
+ 
 }
 .rw:nth-child(2) .hexagon:first-child:before {
     background-color:
@@ -239,13 +188,10 @@ mark.green {
 
 }
 .rw:nth-child(2) .hexagon:nth-child(2):before {
-    background-color:
-    rgba(245,245,245,245);
-
+ 
 }
 .rw:nth-child(3) .hexagon:first-child:before {
-    background-color:
-    rgba(245,245,245,245);
+  
 
 }
 .rw:nth-child(4) .hexagon:first-child:before {
@@ -263,7 +209,7 @@ mark.green {
     top: 50%;
     margin: -3.2em 15%;
     width: 100%;
-    height: 4.4em;
+    height: 14.4em;
     color: black;
     font: 1em/2.4 Century Gothic;
 
@@ -272,16 +218,12 @@ mark.green {
 .ribbonMain:after {
     overflow: hidden;
     top: 50%;
-<<<<<<< HEAD
     margin: -2.6em 16%;
-=======
-    margin: -3.2em 0%;
->>>>>>> origin/master
     width: 104%;
     height: 4.4em;
     color: black;
     font: 1em/2.4 Century Gothic;
-    transform: rotate(266deg) skewY(30deg) scaleX(0.866);
+
 }
 
 .game:after {
