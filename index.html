@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="./bootstrap-3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">  
+    <link href="font/BebasNeue"></link>
 
 </head>
 <body onload="update();" >
@@ -13,29 +16,7 @@
 <script>
     var currentid="div2";
 
-$( document ).ready(function(){
-        $('.plus').click(function(){
-               var y = document.getElementById("value3").innerHTML;
-         if(y.length == '2'){
-            document.getElementById('value3').style.marginLeft  = "43%"; 
-        }
-        else {
-            document.getElementById('value3').style.marginLeft  = "47%";            
-        }
 
-    });
-        $('.minus').click(function(){
-                   var y = document.getElementById("value3").innerHTML;
-
-            if(y.length == '1'){
-            document.getElementById('value3').style.marginLeft  = "47%";
-        }     
-        else{
-            document.getElementById('value3').style.marginLeft  = "43%"; 
-        }
-
-        });
-});
 function makeMain(id){
     currentid=id;
 //alert(id+document.getElementById(id).getAttribute("data-content2")+document.getElementById(id).getAttribute("data-image"));
@@ -58,11 +39,30 @@ function makeMain(id){
     update();
 }
     function update(){
-        document.getElementById("value1").innerHTML= document.getElementById("div1").getAttribute("data-content2");
-        document.getElementById("value2").innerHTML=document.getElementById("div2").getAttribute("data-content2");
+        document.getElementById("value1").innerHTML= document.getElementById("img1").getAttribute("data-content2");
+        document.getElementById("value2").innerHTML=document.getElementById("img2").getAttribute("data-content2");
         document.getElementById("value3").innerHTML=document.getElementById("div3").getAttribute("data-content2");
-        document.getElementById("value4").innerHTML=document.getElementById("div4").getAttribute("data-content2");
-        document.getElementById("value5").innerHTML=document.getElementById("div5").getAttribute("data-content2");
+        document.getElementById("value4").innerHTML=document.getElementById("img4").getAttribute("data-content2");
+        document.getElementById("value5").innerHTML=document.getElementById("img5").getAttribute("data-content2");
+        y = document.getElementById("value3").innerHTML=document.getElementById("div3").getAttribute("data-content2");
+         if(y.length == '2'){
+            document.getElementById('value3').style.marginLeft  = "43%";
+            if(currentid == 'img1'){$('.data1').css("padding-left","21%");}
+            else if(currentid == 'img2'){$('.data2').css("padding-left","70.5%");}
+            else if(currentid == 'img4'){$('.data3').css("padding-left","22%");}
+            else if(currentid == 'img5'){$('.data4').css("padding-left","70.5%");}
+        }
+        else if(y.length == '1'){
+            document.getElementById('value3').style.marginLeft  = "47%"; 
+            if(currentid == 'img1'){$('.data1').css("padding-left","24%");}
+            else if (currentid == 'img2'){$('.data2').css("padding-left","73.5%");}
+            else if (currentid == 'img4'){$('.data3').css("padding-left","25%");}
+            else if (currentid == 'img5'){$('.data4').css("padding-left","73.5%");}
+        }
+        else if(y.length == '3'){
+            document.getElementById('value3').style.marginLeft  = "39%"; 
+        }
+        
     }
 
     function plusFunc(){
@@ -89,27 +89,27 @@ function makeMain(id){
 
     <header>
     <div class="col-xs-12"><img class="logo" src="img/Logo.png" /></div>
-        <div class="col-xs-12" style="background-color: #080808; opacity: 0.70;height: 5em; " >
-            </div>
-        <p class="col-xs-12"  style=" font-size: 97%; font-weight: 900; color: white;position: absolute;margin-top: 24%"> HOW MUCH DO YOU REALLY SMOKE ? <br> <mark class="green">CLICK</mark> TO COUNT AND KEEP TRACK. </p>
+        <div class="col-xs-12" id="app-text"  >
+        <img src="img/text.png" >
+        </div>
+
     </header>
 
 <div style="padding-top: 50%">
 <div class="rw">
 
-<<<<<<< HEAD
     <div  class="hexagon content ribbon content1"style="margin-left: -4.5%" >
     </div>
     <div style="position: absolute;padding-left:17%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BLUNTS<br /><span class="underline"></span></div>
     <div id="img1" onclick="makeMain(id)" data-content2="6" data-image="img/Blunts.png"  data-content="BLUNTS" style="position: absolute;margin-left:-19%;padding-left: 26.5%;color: #000;z-index: 30;margin-top: -25%; text-decoration:"><img src="img/Blunts.png" class="img"></div>
-    <div id="value1" style="position: absolute;padding-left: 24%;font-family: bebaneus;z-index: 30;margin-top: -18%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+    <div id="value1" class="data1" style="position: absolute;padding-left: 24%;font-family: bebaneus;z-index: 30;margin-top: -18%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
 
 
     <div class="hexagon content ribbon content2" style="margin-right: -11px;"></div>
     <div style="position: absolute;padding-left: 66%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">JOINTS
     <br /><span class="underline2"></span></div>
     <div id="img2" class="col-xs-4" onclick="makeMain(id)" data-content2="7" data-image="img/Joints.png"  data-content="JOINTS" style="position: absolute;    margin-right: -4%;right: 10%;z-index: 30;margin-top: -25.5%;"><img style="position: relative;" src="img/Joints.png" class="img"></div>
-    <div id="value2"style="position: absolute;font-family: bebaneus;padding-left: 73.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+    <div id="value2" class="data2" style="position: absolute;font-family: bebaneus;padding-left: 73.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
 </div>
 <div class="rw">
 
@@ -123,48 +123,14 @@ function makeMain(id){
     <div style="position: absolute;padding-left:19%;font-family: bebaneus;z-index: 30;margin-top: -38%;font-size: 7vw;font-weight: 700;color: #000;">BOWLS
     <br /><span class="underline" style="width: 42%;margin-left: -24px;margin-top: -6px;"></span></div>
      <div id="img4" onclick="makeMain(id)" data-content2="8" data-image="img/Bowl.png" data-content="BOWLS" style="position: absolute;padding-left: 23.5%;color: #000;z-index: 30;margin-top: -28%; text-decoration:"><img src="img/Bowl.png" class="img"></div>
-    <div id="value4" style="position: absolute;padding-left: 25%;font-family: bebaneus;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+    <div id="value4" class="data3" style="position: absolute;padding-left: 25%;font-family: bebaneus;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
     
     <div onclick="makeMain(id)" class="hexagon content ribbon content5 var5"></div>
     <div style="position: absolute;padding-left: 67%;z-index: 30;font-family: bebaneus;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BONGS
     <br /><span class="underline2"></span></div>
    <div id="img5" class="col-xs-4" onclick="makeMain(id)" data-content2="6" data-image="img/Bongs.png"  data-content="BONGS" style="position: absolute;    margin-right: -6%;right: 10%;z-index: 30;margin-top: -25%;"><img  style="position: relative;"src="img/Bongs.png" class="img"></div>
-    <div id="value5" style="position: absolute;padding-left: 85%;font-family: bebaneus;padding-left: 73.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
-=======
-    <div  onclick="makeMain(id)" id="div1" class="hexagon content ribbon content1"  data-image="img/Blunts.png" data-content="BLUNTS"  data-content2="6"></div>
-    <div style="position: absolute;padding-left: 35%;z-index: 30;margin-top: -38%;font-weight: 600; text-decoration: underline;">BLUNTS</div>
-    <div id="value1" style="position: absolute;padding-left: 40%;z-index: 30;margin-top: -18%;  font-size: 226%;font-weight: 600;"></div>
-    <div  onclick="makeMain(id)" id="div2" class="hexagon content ribbon content2 var2" data-image="img/Joints.png" data-content="JOINTS" data-content2="7"></div>
-    <div style="position: absolute;padding-left: 80%;z-index: 30;margin-top: -38%;font-weight: 600;text-decoration: underline;">JOINTS</div>
-    <div id="value2"style="position: absolute;padding-left: 86%;z-index: 30;margin-top: -18%; font-size: 226%;font-weight: 600;"></div>
+    <div id="value5" class="data4" style="position: absolute;padding-left: 85%;font-family: bebaneus;padding-left: 73.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
 </div>
-<div class="rw">
-
-    <a class="btns callus" id="minus" href="#"  onclick="minusFunc()"><img src="img/minus.png" alt="MINUS" width="13%" style="margin-top: -30%;"></a>
-    <div id="div3" class="hexagon content ribbonMain var3 content3" data-content=" " data-content2="7"></div>
-    <div id="value3" style="position: absolute;padding-left: 63%;z-index: 30;margin-top: -26%;  font-size: 330%;font-weight: 600;"></div>
-    <a class="btns callus" id="plus" href="#"  onclick="plusFunc()"><img src="img/plus.png" alt="PLUS" width="13%" style="margin-top: -30%;"></a>
-</div>
-<div class="rw">
-    <div id="div4" onclick="makeMain(id)" class="hexagon content ribbon content4 var4" data-content="BOWLS" data-image="img/Bowl.png" data-content2="8"></div>
-    <div style="position: absolute;padding-left: 35%;z-index: 30;margin-top: -38%;font-weight: 600;text-decoration: underline;">BOWLS</div>
-    <div id="value4" style="position: absolute;padding-left: 40%;z-index: 30;margin-top: -18%;  font-size: 226%;font-weight: 600;"></div>
-    <div id="div5" onclick="makeMain(id)" class="hexagon content ribbon content5 var5" data-image="img/Bongs.png" data-content="BONGS" data-content2="9"></div>
-    <div style="position: absolute;padding-left: 80%;z-index: 30;margin-top: -38%;font-weight: 600;text-decoration: underline;">BONGS</div>
-    <div id="value5" style="position: absolute;padding-left: 86%;z-index: 30;margin-top: -18%;  font-size: 226%;font-weight: 600;"></div>
->>>>>>> origin/master
-</div>
-    <div  class="hexagonb contentb" style=" margin-top: -40%;
-    margin-left: 5%;"></div>
-    <div  class="hexagonb contentb" style=" margin-top: -117.5%;
-    margin-left: 5%;"></div>
-    <div  class="hexagonb contentb" style=" margin-top: -117.25%;
-    margin-left: 50%;"></div>
-    <div  class="hexagonb contentb" style=" margin-top: -78.5%;
-    margin-left: 27.5%;"></div>
-    <div  class="hexagonb contentb" style=" margin-top: -40%;
-    margin-left: 50%;"></div>
-
 </div>
 
 </body>
