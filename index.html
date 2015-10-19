@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="./bootstrap-3.3.5/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width,user-scalable=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0, minimal-ui" />
+        <meta name="viewport" content="width=620, user-scalable=no" />
+        <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,user-scalable=no" />
+        <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0" />
+        <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=yes" />
     <link rel="stylesheet" href="./css/style.css">  
     <link href="font/BebasNeue"></link>
 
@@ -13,29 +17,39 @@
 <body onload="update();" >
 <script src="./bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="./js/jquery1.9.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+        console.log(localStorage.getItem("count1"));
+        if(!isNaN(localStorage.getItem("count1"))){
+        document.getElementById("value1").innerHTML = localStorage.getItem("count1");
+        document.getElementById("img1").setAttribute("data-content2",localStorage.getItem("count1"));
+        }
+         if(!isNaN(localStorage.getItem("count2"))){
+        document.getElementById("value2").innerHTML = localStorage.getItem("count2");
+        document.getElementById("img2").setAttribute("data-content2",localStorage.getItem("count2"));
+        }
+        if(!isNaN(localStorage.getItem("count3"))){
+         document.getElementById("value4").innerHTML = localStorage.getItem("count3");
+        document.getElementById("img4").setAttribute("data-content2",localStorage.getItem("count3"));
+        }
+        if(!isNaN(localStorage.getItem("count4"))){
+        document.getElementById("value5").innerHTML = localStorage.getItem("count4");
+        document.getElementById("img5").setAttribute("data-content2",localStorage.getItem("count4"));
+
+        }
+
+});
+</script>
 <script>
     var currentid="div2";
-
-
 function makeMain(id){
     currentid=id;
-//alert(id+document.getElementById(id).getAttribute("data-content2")+document.getElementById(id).getAttribute("data-image"));
     document.getElementById("div3").setAttribute("data-content2",document.getElementById(id).getAttribute("data-content2"));
-    //alert(document.getElementById("div3").getAttribute("data-image"));
-   // document.getElementById("div3").currentStyle("data-image",document.getElementById(id).getAttribute("data-image"));
-       // var y=document.getElementById("id").getAttribute("data-image");
-  //  var test = document.getElementsByClassName(content3).
-   //         backgroundImage="url("+document.getElementById(id).getAttribute("data-image")+")";
-    //console.log(document.styleSheets[0].addRule('.content3::after','background-image: url("img/Joints.png")'));
-    //console.log(test);
-   // preview = document.getElementsByClassName("content3")[0];
-
     var img=document.getElementById(id).getAttribute("data-image");
     update();
 //alert(img);
  var example = $('<style>.content3::after{background-image:url('+img+')}</style>').appendTo('head');
  console.log(example);
-   // preview.style.backgroundImage = "url("+document.getElementById(id).getAttribute("data-image")+")";
     update();
 }
     function update(){
@@ -44,7 +58,8 @@ function makeMain(id){
         document.getElementById("value3").innerHTML=document.getElementById("div3").getAttribute("data-content2");
         document.getElementById("value4").innerHTML=document.getElementById("img4").getAttribute("data-content2");
         document.getElementById("value5").innerHTML=document.getElementById("img5").getAttribute("data-content2");
-        y = document.getElementById("value3").innerHTML=document.getElementById("div3").getAttribute("data-content2");
+
+        y = document.getElementById("value3").innerHTML=document.getElementById(currentid).getAttribute("data-content2");
          if(y.length == '2'){
             document.getElementById('value3').style.marginLeft  = "43%";
             if(currentid == 'img1'){$('.data1').css("padding-left","21%");}
@@ -53,11 +68,11 @@ function makeMain(id){
             else if(currentid == 'img5'){$('.data4').css("padding-left","70.5%");}
         }
         else if(y.length == '1'){
-            document.getElementById('value3').style.marginLeft  = "47%"; 
-            if(currentid == 'img1'){$('.data1').css("padding-left","24%");}
-            else if (currentid == 'img2'){$('.data2').css("padding-left","73.5%");}
-            else if (currentid == 'img4'){$('.data3').css("padding-left","25%");}
-            else if (currentid == 'img5'){$('.data4').css("padding-left","73.5%");}
+            document.getElementById('value3').style.marginLeft  = "46%"; 
+            if(currentid == 'img1'){$('.data1').css("padding-left","23%");}
+            else if (currentid == 'img2'){$('.data2').css("padding-left","72.5%");}
+            else if (currentid == 'img4'){$('.data3').css("padding-left","24%");}
+            else if (currentid == 'img5'){$('.data4').css("padding-left","72.5%");}
         }
         else if(y.length == '3'){
             document.getElementById('value3').style.marginLeft  = "39%"; 
@@ -70,7 +85,13 @@ function makeMain(id){
         document.getElementById("div3").setAttribute("data-content2", parseInt(x)+1);
         document.getElementById(currentid).setAttribute("data-content2", parseInt(x)+1);
         update();
+        if(typeof(Storage) !== "undefined") {
+       localStorage.setItem("count1", document.getElementById("value1").innerHTML);
+       localStorage.setItem("count2", document.getElementById("value2").innerHTML);
+       localStorage.setItem("count3", document.getElementById("value4").innerHTML);
+       localStorage.setItem("count4", document.getElementById("value5").innerHTML);      
     }
+}
 
     function minusFunc(){
         var x=document.getElementById("div3").getAttribute("data-content2");
@@ -80,9 +101,14 @@ function makeMain(id){
           document.getElementById("div3").setAttribute("data-content2", parseInt(x) - 1);
           document.getElementById(currentid).setAttribute("data-content2", parseInt(x) - 1);
           update();
-      }
-    }
-
+        if(typeof(Storage) !== "undefined") {
+       localStorage.setItem("count1", document.getElementById("value1").innerHTML);
+       localStorage.setItem("count2", document.getElementById("value2").innerHTML);
+       localStorage.setItem("count3", document.getElementById("value4").innerHTML);
+       localStorage.setItem("count4", document.getElementById("value5").innerHTML);      
+    } 
+  }
+}
 
 
 </script>
@@ -98,38 +124,38 @@ function makeMain(id){
 <div style="padding-top: 50%">
 <div class="rw">
 
-    <div  class="hexagon content ribbon content1"style="margin-left: -4.5%" >
+    <div data-content="BLUNTS" class="hexagon content ribbon content1"style="margin-left: -4.5%" >
     </div>
-    <div style="position: absolute;padding-left:17%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BLUNTS<br /><span class="underline"></span></div>
-    <div id="img1" onclick="makeMain(id)" data-content2="6" data-image="img/Blunts.png"  data-content="BLUNTS" style="position: absolute;margin-left:-19%;padding-left: 26.5%;color: #000;z-index: 30;margin-top: -25%; text-decoration:"><img src="img/Blunts.png" class="img"></div>
-    <div id="value1" class="data1" style="position: absolute;padding-left: 24%;font-family: bebaneus;z-index: 30;margin-top: -18%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
-
-
+    <div onclick="makeMain(id)" data-content2="0" data-image="img/Blunts.png"  data-content="BLUNTS" style="position: absolute;padding-left:17%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BLUNTS<br /><span class="underline"></span></div>
+    <div id="img1" onclick="makeMain(id)" data-content2="0" data-image="img/Blunts.png"  data-content="BLUNTS"  id="img1" style="position: absolute;margin-left:-19%;padding-left: 26.5%;color: #000;z-index: 30;margin-top: -25%; text-decoration:"><img src="img/Blunts.png" class="img"></div>
+    <div  id="value1" class="data1" style="position: absolute;padding-left: 23%;font-family: bebaneus;z-index: 30;margin-top: -18%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+ 
     <div class="hexagon content ribbon content2" style="margin-right: -11px;"></div>
     <div style="position: absolute;padding-left: 66%;font-family: bebaneus;z-index: 30;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">JOINTS
     <br /><span class="underline2"></span></div>
-    <div id="img2" class="col-xs-4" onclick="makeMain(id)" data-content2="7" data-image="img/Joints.png"  data-content="JOINTS" style="position: absolute;    margin-right: -4%;right: 10%;z-index: 30;margin-top: -25.5%;"><img style="position: relative;" src="img/Joints.png" class="img"></div>
-    <div id="value2" class="data2" style="position: absolute;font-family: bebaneus;padding-left: 73.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+    <div id="img2" onclick="makeMain(id)" data-content2="0" data-image="img/Joints.png"  data-content="JOINTS" class="col-xs-4" style="position: absolute; margin-right: -4%;right: 10%;z-index: 30;margin-top: -25.5%;"><img style="position: relative;" src="img/Joints.png" class="img"></div>
+    <div id="value2" class="data2" style="position: absolute;font-family: bebaneus;padding-left: 72.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
 </div>
 <div class="rw">
 
     <a class="btns callus" id="minus" href="#"  onclick="minusFunc()"><img class="minus" src="img/minus.png" alt="MINUS" width="13%" style="margin-top: -39.5%;"></a>
     <div id="div3" class="hexagon content ribbonMain var3 content3" data-content=" " data-content2="0"></div>
-    <div id="value3" style="position: absolute;font-family: bebaneus;margin-left: 47%;z-index: 30;margin-top: -28%;font-size: 17.9vw;font-weight: 600;color: #000;"></div>
+    <div id="value3" style="position: absolute;font-family: bebaneus;margin-left: 46%;z-index: 30;margin-top: -28%;font-size: 17.9vw;font-weight: 600;color: #000;"></div>
     <a class="btns callus" id="plus" href="#"  onclick="plusFunc()"><img class="plus" src="img/plus.png" alt="PLUS" width="13%" style="margin-top: -42%;"></a>
 </div>
+
 <div class="rw" style="margin-top: 6px;">
     <div class="hexagon content ribbon content4 "></div>
     <div style="position: absolute;padding-left:19%;font-family: bebaneus;z-index: 30;margin-top: -38%;font-size: 7vw;font-weight: 700;color: #000;">BOWLS
     <br /><span class="underline" style="width: 42%;margin-left: -24px;margin-top: -6px;"></span></div>
-     <div id="img4" onclick="makeMain(id)" data-content2="8" data-image="img/Bowl.png" data-content="BOWLS" style="position: absolute;padding-left: 23.5%;color: #000;z-index: 30;margin-top: -28%; text-decoration:"><img src="img/Bowl.png" class="img"></div>
-    <div id="value4" class="data3" style="position: absolute;padding-left: 25%;font-family: bebaneus;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+     <div id="img4" onclick="makeMain(id)" data-content2="0" data-image="img/Bowl.png" data-content="BOWLS" style="position: absolute;padding-left: 23.5%;color: #000;z-index: 30;margin-top: -28%; text-decoration:"><img src="img/Bowl.png" class="img"></div>
+    <div id="value4" class="data3" style="position: absolute;padding-left: 24%;font-family: bebaneus;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
     
-    <div onclick="makeMain(id)" class="hexagon content ribbon content5 var5"></div>
+    <div class="hexagon content ribbon content5 var5"></div>
     <div style="position: absolute;padding-left: 67%;z-index: 30;font-family: bebaneus;margin-top: -37.5%;font-size: 7vw;font-weight: 700;color: #000;">BONGS
     <br /><span class="underline2"></span></div>
-   <div id="img5" class="col-xs-4" onclick="makeMain(id)" data-content2="6" data-image="img/Bongs.png"  data-content="BONGS" style="position: absolute;    margin-right: -6%;right: 10%;z-index: 30;margin-top: -25%;"><img  style="position: relative;"src="img/Bongs.png" class="img"></div>
-    <div id="value5" class="data4" style="position: absolute;padding-left: 85%;font-family: bebaneus;padding-left: 73.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
+   <div id="img5" class="col-xs-4" onclick="makeMain(id)" data-content2="0" data-image="img/Bongs.png"  data-content="BONGS" style="position: absolute;    margin-right: -6%;right: 10%;z-index: 30;margin-top: -25%;"><img  style="position: relative;"src="img/Bongs.png" class="img"></div>
+    <div id="value5" class="data4" style="position: absolute;padding-left: 85%;font-family: bebaneus;padding-left: 72.5%;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
 </div>
 </div>
 
