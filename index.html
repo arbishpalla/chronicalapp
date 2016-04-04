@@ -20,36 +20,61 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
+            if(localStorage.getItem("count1").length == '1'){$('.data1').css("padding-left","23%");}
+            if(localStorage.getItem("count2").length == '1'){$('.data2').css("right","24%");}
+            if(localStorage.getItem("count3").length == '1'){$('.data3').css("padding-left","23%");}
+            if(localStorage.getItem("count4").length == '1'){$('.data4').css("right","23%");}
+
+            if(localStorage.getItem("count1").length == '2'){$('.data1').css("padding-left","21%");}
+            if(localStorage.getItem("count2").length == '2'){$('.data2').css("right","22%");}
+            if(localStorage.getItem("count3").length == '2'){$('.data3').css("padding-left","21%");}
+            if(localStorage.getItem("count4").length == '2'){$('.data4').css("right","20.5%");}
+
+            if(localStorage.getItem("count1").length == '3'){$('.data1').css("padding-left","19%");}
+            if(localStorage.getItem("count2").length == '3'){$('.data2').css("right","20%");}
+            if(localStorage.getItem("count3").length == '3'){$('.data3').css("padding-left","20%");}
+            if(localStorage.getItem("count4").length == '3'){$('.data4').css("right","19%");}
+
+
+
+
+
         console.log(localStorage.getItem("count1"));
-        if(localStorage.getItem("count1") != null ){
-        if(!isNaN(localStorage.getItem("count1"))){
+    if(localStorage.getItem("count1") != null )
+    {
+        if(!isNaN(localStorage.getItem("count1")))
+        {
         document.getElementById("value1").innerHTML = localStorage.getItem("count1");
         document.getElementById("span1").setAttribute("data-content2",localStorage.getItem("count1"));
         }
     }
-        if(localStorage.getItem("count2") != null ){    
-         if(!isNaN(localStorage.getItem("count2"))){
+    if(localStorage.getItem("count2") != null )
+    {    
+        if(!isNaN(localStorage.getItem("count2")))
+        {
         document.getElementById("value2").innerHTML = localStorage.getItem("count2");
         document.getElementById("span2").setAttribute("data-content2",localStorage.getItem("count2"));
         }
     }
-         if(localStorage.getItem("count3") != null ){
+    if(localStorage.getItem("count3") != null ){
         if(!isNaN(localStorage.getItem("count3"))){
          document.getElementById("value4").innerHTML = localStorage.getItem("count3");
         document.getElementById("span3").setAttribute("data-content2",localStorage.getItem("count3"));
         }
     }
-        if(localStorage.getItem("count4") != null ){
-        if(!isNaN(localStorage.getItem("count4"))){
+    if(localStorage.getItem("count4") != null )
+    {
+        if(!isNaN(localStorage.getItem("count4")))
+        {
         document.getElementById("value5").innerHTML = localStorage.getItem("count4");
         document.getElementById("span4").setAttribute("data-content2",localStorage.getItem("count4"));
-            }   
-        }
+       }   
+    }
 
 });
 </script>
 <script>
-    var currentid="div2";
+var currentid="div2";
 function makeMain(id){
     currentid=id;
     document.getElementById("div3").setAttribute("data-content2",document.getElementById(id).getAttribute("data-content2"));
@@ -66,24 +91,28 @@ function makeMain(id){
         document.getElementById("value3").innerHTML=document.getElementById("div3").getAttribute("data-content2");
         document.getElementById("value4").innerHTML=document.getElementById("span3").getAttribute("data-content2");
         document.getElementById("value5").innerHTML=document.getElementById("span4").getAttribute("data-content2");
-
         y = document.getElementById("value3").innerHTML=document.getElementById(currentid).getAttribute("data-content2");
-         if(y.length == '2'){
-            document.getElementById('value3').style.marginLeft  = "43%";
-            if(currentid == 'span1'){$('.data1').css("padding-left","21%");}
-            else if(currentid == 'span2'){$('.data2').css("right","24%");}
-            else if(currentid == 'span3'){$('.data3').css("padding-left","22%");}
-            else if(currentid == 'span4'){$('.data4').css("right","24%");}
-        }
-        else if(y.length == '1'){
+         if(y.length == '1'){
             document.getElementById('value3').style.marginLeft  = "46%"; 
             if(currentid == 'span1'){$('.data1').css("padding-left","23%");}
-            else if (currentid == 'span2'){$('.data2').css("right","23%");}
-            else if (currentid == 'span3'){$('.data3').css("padding-left","24%");}
-            else if (currentid == 'span4'){$('.data4').css("right","23%");}
+            if(currentid == 'span2'){$('.data2').css("right","24%");}
+            if(currentid == 'span3'){$('.data3').css("padding-left","23%");}
+            if(currentid == 'span4'){$('.data4').css("right","23%");}
         }
-        else if(y.length == '3'){
-            document.getElementById('value3').style.marginLeft  = "39%"; 
+         if(y.length == '2'){
+            document.getElementById('value3').style.marginLeft  = "42%";
+            if(currentid == 'span1'){$('.data1').css("padding-left","21%");}
+            if(currentid == 'span2'){$('.data2').css("right","22%");}
+            if(currentid == 'span3'){$('.data3').css("padding-left","21%");}
+            if(currentid == 'span4'){$('.data4').css("right","20.5%");}
+        }
+         if(y.length == '3'){
+            if(currentid == 'span1'){$('.data1').css("padding-left","19%");}
+            if(currentid == 'span2'){$('.data2').css("right","20%");}
+            if(currentid == 'span3'){$('.data3').css("padding-left","19%");}
+            if(currentid == 'span4'){$('.data4').css("right","20%");}
+
+            document.getElementById('value3').style.marginLeft  = "38.6%"; 
         }
         
     }
@@ -148,16 +177,16 @@ function makeMain(id){
 </div>
 <div class="rw">
 
-    <a class="btns callus" id="minus" href="#"  onclick="minusFunc()"><img class="minus" src="img/minus.png" alt="MINUS" width="13%" style="margin-top: -39.5%;"></a>
+    <img id="minus" onclick="minusFunc()" class="minus" src="img/minus.png" alt="MINUS" width="13%" style="margin-top: -39.5%;">
     <div id="div3" class="hexagon content ribbonMain var3 content3" data-content=" " data-content2="0"></div>
     <div id="value3" style="position: absolute;font-family: bebaneus;margin-left: 46%;z-index: 30;margin-top: -28%;font-size: 17.9vw;font-weight: 600;color: #000;"></div>
-    <a class="btns callus" id="plus" href="#"  onclick="plusFunc()"><img class="plus" src="img/plus.png" alt="PLUS" width="13%" style="margin-top: -42%;"></a>
+    <img class="plus" id="plus" onclick="plusFunc()" src="img/plus.png" alt="PLUS" width="13%" style="margin-top: -42%;">
 </div>
 <div class="rw" style="margin-top: 6px;">
    <span id="span3" onclick="makeMain(id)" data-content2="0" data-image="img/Bowl.png" data-content="BOWLS">
     <div class="hexagon content ribbon content4 "></div>
     <div style="position: absolute;padding-left:19%;font-family: bebaneus;z-index: 30;margin-top: -38%;font-size: 7vw;font-weight: 700;color: #000;">BOWLS
-    <br /><span class="underline" style="width: 42%;margin-left: -24px;margin-top: -6px;"></span></div>
+    <br /><span class="underline" style="width: 42%;margin-left:-23%;margin-top: -6px;"></span></div>
      <div id="img4" style="position: absolute;padding-left: 23.5%;color: #000;z-index: 30;margin-top: -28%; text-decoration:"><img src="img/Bowl.png" class="img"></div>
     <div id="value4" class="data3" style="position: absolute;padding-left: 24%;font-family: bebaneus;z-index: 30;margin-top: -19%;font-size: 9.9vw;font-weight: 600;color: #000;"></div>
     </span>
